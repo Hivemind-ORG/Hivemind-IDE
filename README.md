@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/Hivemind-ORG/Hivemind-IDE/releases/download/v0.6.3/icon.png" alt="Hivemind IDE" width="128" height="128" />
-</p>
-
 <h1 align="center">Hivemind IDE</h1>
 
 <p align="center">
