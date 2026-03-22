@@ -1,76 +1,90 @@
-<h1 align="center">Hivemind IDE</h1>
+# Hivemind
 
-<p align="center">
-  An AI-agent-centric desktop IDE that lets AI agents autonomously write code, fix bugs, and review pull requests — all inside sandboxed Docker containers with real-time terminal streaming and full Git integration.
-</p>
+### Your AI agents. Your code. One app.
 
-<p align="center">
-  <a href="https://github.com/Hivemind-ORG/Hivemind-IDE/releases/latest">Download</a>
-</p>
+Hivemind is a desktop app that puts AI coding agents to work on your repositories. Give an agent a task — fix a bug, build a feature, review a pull request — and watch it work in real time. Each agent gets its own isolated workspace, so multiple agents can work on different tasks simultaneously without interfering with each other.
 
 ---
 
-## Features
+## What can Hivemind do?
 
-### AI Agent Workspace
+**Let AI agents write code for you**
+Launch an AI agent, describe what you want, and let it do the work. The agent can read your code, run commands, make changes, commit, and push — all on its own.
 
-- **Launch AI agents** that work autonomously inside isolated Docker containers
-- **Real-time terminal streaming** — watch agents think, code, and debug live via xterm.js
-- **Built-in agent templates** — Bug Fixer, Code Reviewer, and Feature Builder, each with tailored system prompts
-- **Custom templates** — create and save your own agent instructions
-- **Macro system** — record and replay agent workflows with a single shortcut
+**Review pull requests automatically**
+Point an agent at a pull request and it will review the changes, leave inline comments, and submit its review — just like a human teammate would.
 
-### Code Editor
+**Work on multiple tasks at once**
+Each agent works in its own isolated branch. You can have several agents running in parallel — one fixing a bug, another building a feature, another reviewing code — all at the same time.
 
-- Full-featured editor powered by **CodeMirror 6** with syntax highlighting for 20+ languages (TypeScript, Python, Rust, Go, Java, C++, and more)
-- Integrated file tree with drag-and-drop support
-- Theme customization with preset system
+**Watch everything in real time**
+Every agent has a live terminal stream so you can see exactly what it's doing. You also get a built-in code editor and diff viewer to inspect changes as they happen.
 
-### Git Integration
+**Connect your Git provider**
+Hivemind integrates with GitHub, GitLab, and Bitbucket. Agents can create pull requests, push branches, and interact with your repositories directly.
 
-- Complete Git workflow powered by **libgit2** — branches, commits, diffs, and merge conflict resolution
-- **GitHub and GitLab** support with OAuth token management and secure credential storage via OS keyring
-- Pull request creation, review, and auto-approval workflows
-- Each agent gets its own **git worktree**, enabling safe parallel work without conflicts
+**Set up dev macros**
+Define multi-step command sequences (start the server, run tests, lint) that your agents or you can trigger with a keyboard shortcut.
 
-### Docker Sandboxing
+---
 
-- Every agent runs in its own Docker container built from a custom base image (Ubuntu 22.04 + Node 20 + Git + Python 3)
-- Dynamically allocated ports (10000–19999) and dedicated PTY streams per agent
-- Agents communicate back to the host via a local HTTP API and WebSocket connection
+## Getting Started
 
-## Architecture
+1. **Download Hivemind** from the [latest release](https://github.com/Hivemind-ORG/Hivemind-IDE/releases/latest)
+2. Install and open the app
+3. Connect your Git provider (GitHub, GitLab, or Bitbucket)
+4. Add a repository
+5. Launch an agent and give it a task
 
-Hivemind IDE is built on three communication layers:
+That's it. The agent takes it from there.
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Frontend ↔ Backend** | Tauri v2 IPC | React UI invokes Rust commands, receives typed events |
-| **Agents ↔ Backend** | Axum HTTP API + WebSocket | Agents in Docker call back to host for git ops, status updates, PR reviews |
-| **Backend ↔ Git Providers** | GitHub / GitLab REST APIs | OAuth-authenticated remote operations |
+---
 
-## Tech Stack
+## Requirements
 
-| Component | Technologies |
-|-----------|-------------|
-| **Frontend** | React 18, TypeScript (strict), Vite, Tailwind CSS, Zustand, CodeMirror 6, xterm.js |
-| **Backend** | Rust, Tauri v2, Axum 0.7, Tokio, SQLite (WAL mode), Bollard (Docker), git2 |
-| **Containers** | Docker — custom Ubuntu 22.04 base image with Node 20, Git, Python 3 |
-| **Security** | OS-native keyring (Apple Keychain / Windows Credential Manager / Linux Secret Service) |
+- **macOS** (Apple Silicon or Intel) / **Windows** / **Linux**
+- **Claude Code CLI** installed and authenticated (Hivemind uses Claude Code as the AI agent)
+- A Git provider account (GitHub, GitLab, or Bitbucket) for push/PR features
 
-## Supported Platforms
+---
 
-| Platform | Architecture |
-|----------|-------------|
-| **macOS** | Apple Silicon (arm64), Intel (x86_64) |
-| **Linux** | x86_64 (Ubuntu 22.04+) |
-| **Windows** | x86_64 (Windows 10+) |
+## How It Works
 
-All platforms support automatic updates via GitHub Releases.
+When you launch an agent in Hivemind, here's what happens behind the scenes:
 
-## Prerequisites
+1. Hivemind creates a **separate git worktree** (an isolated copy of your repo on its own branch)
+2. The AI agent starts up in that workspace with access to a terminal and git commands
+3. The agent reads your code, makes changes, runs commands, and commits — all autonomously
+4. You watch the agent's progress through a live terminal and diff view
+5. When it's done, the agent can push its branch and open a pull request
 
-- [Node.js](https://nodejs.org/) 18+
-- [Rust](https://rustup.rs/) (latest stable)
-- [Docker](https://www.docker.com/) (for running agents)
-- Tauri v2 system dependencies ([see platform-specific requirements](https://v2.tauri.app/start/prerequisites/))
+You stay in control. You can watch, intervene, or let it run in the background.
+
+---
+
+## Features at a Glance
+
+| Feature | Description |
+|---------|-------------|
+| AI Agent Launcher | Launch agents with a prompt, pick a branch, and let them work |
+| Live Terminal | Watch agent activity in real time |
+| Code Editor | Built-in editor with syntax highlighting |
+| Diff Viewer | See exactly what changed, side by side |
+| PR Reviews | Agents can review PRs with inline comments |
+| Git Integration | Full git support — commit, push, pull, branch, merge |
+| Multi-Provider | GitHub, GitLab, and Bitbucket |
+| Macros | Multi-step command automation |
+| Themes | Light, Dark, Dim, and Catppuccin Mocha |
+| Auto-Updates | Stay up to date with in-app updates |
+
+---
+
+## Links
+
+- [Download latest release](https://github.com/Hivemind-ORG/Hivemind-IDE/releases/latest)
+- [GitHub Repository](https://github.com/Hivemind-ORG/Hivemind-IDE)
+- [Report an issue](https://github.com/Hivemind-ORG/Hivemind-IDE/issues)
+
+---
+
+Made by Erik de Jager.
