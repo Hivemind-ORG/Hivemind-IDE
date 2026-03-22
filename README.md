@@ -1,6 +1,6 @@
 # Hivemind
 
-### Your AI agents. Your code. One clear overview.
+### Your AI agents in one clear overview.
 
 Hivemind is a desktop app that puts AI coding agents to work on your repositories — and keeps you in the loop while they do it. Launch multiple agents at once, each tackling a different task in its own isolated workspace, and see all of their progress from a single screen. Live terminals, real-time diffs, branch comparisons, and auto-refreshing file trees give you a complete picture of everything that's happening across your codebase at a glance.
 
