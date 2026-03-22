@@ -1,8 +1,8 @@
 # Hivemind
 
-### Your AI agents. Your code. One app.
+### Your AI agents. Your code. One clear overview.
 
-Hivemind is a desktop app that puts AI coding agents to work on your repositories. Give an agent a task — fix a bug, build a feature, review a pull request — and watch it work in real time. Each agent gets its own isolated workspace, so multiple agents can work on different tasks simultaneously without interfering with each other.
+Hivemind is a desktop app that puts AI coding agents to work on your repositories — and keeps you in the loop while they do it. Launch multiple agents at once, each tackling a different task in its own isolated workspace, and see all of their progress from a single screen. Live terminals, real-time diffs, branch comparisons, and auto-refreshing file trees give you a complete picture of everything that's happening across your codebase at a glance.
 
 ---
 
@@ -14,11 +14,11 @@ Launch an AI agent, describe what you want, and let it do the work. The agent ca
 **Review pull requests automatically**
 Point an agent at a pull request and it will review the changes, leave inline comments, and submit its review — just like a human teammate would.
 
-**Work on multiple tasks at once**
-Each agent works in its own isolated branch. You can have several agents running in parallel — one fixing a bug, another building a feature, another reviewing code — all at the same time.
+**Run agents in parallel — and actually keep track of them**
+Each agent works in its own isolated branch. You can have several agents running at once — one fixing a bug, another building a feature, another reviewing code — and Hivemind gives you a clear overview of all of them. Switch between agent workspaces with tabs, compare branches side by side, and never lose track of what's happening where.
 
 **Watch everything in real time**
-Every agent has a live terminal stream so you can see exactly what it's doing. You also get a built-in code editor and diff viewer to inspect changes as they happen.
+Every agent has a live terminal stream so you can follow exactly what it's doing. File trees auto-refresh as agents make changes, diffs update on the fly, and toast notifications let you know when tasks finish — even while you're focused on another agent.
 
 **Connect your Git provider**
 Hivemind integrates with GitHub, GitLab, and Bitbucket. Agents can create pull requests, push branches, and interact with your repositories directly.
@@ -66,11 +66,16 @@ You stay in control. You can watch, intervene, or let it run in the background.
 
 | Feature | Description |
 |---------|-------------|
-| AI Agent Launcher | Launch agents with a prompt, pick a branch, and let them work |
-| Live Terminal | Watch agent activity in real time |
-| Code Editor | Built-in editor with syntax highlighting |
+| Parallel Agent Overview | See all running agents and their progress from one screen |
+| Worktree Tabs | Switch between agent workspaces instantly |
+| Live Terminal | Watch each agent's activity in real time |
+| Auto-Refreshing File Trees | Files update automatically as agents make changes |
 | Diff Viewer | See exactly what changed, side by side |
+| Branch Compare | Compare any two branches to see the full picture |
+| AI Agent Launcher | Launch agents with a prompt, pick a branch, and let them work |
+| Code Editor | Built-in editor with syntax highlighting and inline search |
 | PR Reviews | Agents can review PRs with inline comments |
+| Global Search | Search across repos and branches to understand impact |
 | Git Integration | Full git support — commit, push, pull, branch, merge |
 | Multi-Provider | GitHub, GitLab, and Bitbucket |
 | Macros | Multi-step command automation |
